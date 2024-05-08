@@ -1,0 +1,47 @@
+{
+    "timeZone": "America/New_York",
+    "dependencies": {
+    },
+    "exceptionLogging": "STACKDRIVER",
+    "runtimeVersion": "V8",
+    "addOns": {
+      "common": {
+        "name": "SHREW",
+        "logoUrl": "https://media.istockphoto.com/id/1144604134/photo/malware-detected-warning-screen.webp?s=1024x1024&w=is&k=20&c=LZwVbf4wqvm0hvFiVAtgEh_zJWzVOEGKkclt5RhkAwQ=",
+        "layoutProperties": {
+          "primaryColor": "#008000",
+          "secondaryColor": "#FF0000"
+        },
+        "homepageTrigger": {
+          "runFunction": "onHome"
+        }
+      },
+      "gmail": {
+        "contextualTriggers": [{
+          "unconditional": {
+          },
+          "onTriggerFunction": "onOpen"
+        }],
+         "openLinkUrlPrefixes": [
+          "https://www.virustotal.com"
+        ]
+      }
+    },
+    "oauthScopes": [
+      "https://www.googleapis.com/auth/gmail.addons.execute",
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/script.external_request",
+      "https://www.googleapis.com/auth/script.scriptapp",
+      "https://www.googleapis.com/auth/spreadsheets.currentonly",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ],
+     "webapp": {
+      "access": "DOMAIN",
+      "executeAs": "USER_DEPLOYING"
+    },
+    "urlFetchWhitelist": [
+      "https://www.virustotal.com/vtapi/v2/url/scan",
+      "https://www.virustotal.com/vtapi/v2/url/report"
+    ]
+  }
+  
